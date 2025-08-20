@@ -1,0 +1,20 @@
+{
+    "name": "jdz/jizy-browser",
+    "type": "library",
+    "description": "A simple JS browser compatibility library",
+    "keywords": [
+        "JDZ",
+        "Browser",
+        "Compatibility"
+    ],
+    "homepage": "https://jdz.joffreydemetz.com/jbrowser",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joffrey Demetz",
+            "email": "joffrey.demetz@gmail.com",
+            "homepage": "https://joffreydemetz.com",
+            "role": "Lead"
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "jizy-browser",
+  "version": "2.0.0",
+  "browser": "dist/js/jizy-browser.min.js",
+  "main": "lib/index.js",
+  "type": "module",
+  "files": [
+    "dist/js/jizy-browser.min.js",
+    "dist/css/jizy-browser.min.css",
+    "lib/js/*.js",
+    "lib/less/*.less",
+    "lib/index.js",
+    "lib/browsercompat.less"
+  ],
+  "scripts": {
+    "jpack:export": "node ./cli/jpack.js -t perso",
+    "jpack:export-debug": "node ./cli/jpack.js -t perso --debug",
+    "jpack:dist": "node ./cli/jpack.js -t dist",
+    "jpack:dist-debug": "node ./cli/jpack.js -t dist --debug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joffreydemetz/jizy-browser.git"
+  },
+  "keywords": [
+    "browser",
+    "compatibility"
+  ],
+  "author": "Joffrey Demetz <joffrey.demetz@gmail.com> (https://joffreydemetz.com/)",
+  "license": "MIT",
+  "description": "A simple JS browser compatibility library.",
+  "devDependencies": {
+    "jizy-packer": "^2.0.0"
+  }
+}

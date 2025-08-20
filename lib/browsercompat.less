@@ -1,0 +1,13 @@
+@import url("../dist/config.less");
+@import url("less/variables.less");
+@import url("less/structure.less");
+
+@media (min-width: @desktop-breakpoint) {
+    @import url("less/screen.less");
+}
+
+@media print {
+    #browser {
+        display: none;
+    }
+}

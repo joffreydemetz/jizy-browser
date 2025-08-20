@@ -1,0 +1,5 @@
+import BrowserCompat from '{{PREFIX}}lib/js/browsercompat.js';
+
+import '{{PREFIX}}lib/browsercompat.less';
+
+export default BrowserCompat;
