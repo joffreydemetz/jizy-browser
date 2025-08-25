@@ -1,36 +1,29 @@
 import fs from 'fs';
 import path from 'path';
-import { LogMe, jPackConfig, removeEmptyDirs } from 'jizy-packer';
+import { LogMe, jPackConfig } from 'jizy-packer';
 
-async function generateConfigLess() {
-    LogMe.log('Generate config.less');
-    const desktopBreakpoint = jPackConfig.get('desktopBreakpoint') ?? '768px';
-    let lessContent = `@desktop-breakpoint: ${desktopBreakpoint};` + "\n";
-    lessContent += `@mobile-breakpoint: @desktop-breakpoint - 1px;`;
-    fs.writeFileSync(path.join(jPackConfig.get('assetsPath'), 'config.less'), lessContent);
-}
+const jPackData = function () {
+    jPackConfig.sets({
+        name: 'BrowserCompat',
+        alias: 'jizy-browser',
+        desktopBreakpoint: "900px"
+    });
 
-const jPackData = {
-    name: 'BrowserCompat',
-    alias: 'jizy-browser',
-    cfg: 'browser',
-    assetsPath: 'dist',
+    jPackConfig.set('onCheckConfig', () => { });
 
-    buildTarget: null,
-    buildZip: false,
-    buildName: 'default',
-
-    onCheckConfig: () => { },
-
-    onGenerateBuildJs: (code) => {
-        generateConfigLess();
+    jPackConfig.set('onGenerateBuildJs', (code) => {
+        LogMe.log('Generate config.less');
+        LogMe.log('  path: ' + path.join(jPackConfig.get('targetPath'), 'config.less'));
+        const desktopBreakpoint = jPackConfig.get('desktopBreakpoint') ?? '768px';
+        let lessContent = `@desktop-breakpoint: ${desktopBreakpoint};` + "\n";
+        lessContent += `@mobile-breakpoint: @desktop-breakpoint - 1px;`;
+        fs.writeFileSync(path.join(jPackConfig.get('targetPath'), 'config.less'), lessContent);
         return code;
-    },
+    });
 
-    onGenerateWrappedJs: (wrapped) => wrapped,
+    jPackConfig.set('onGenerateWrappedJs', (wrapped) => wrapped);
 
-    onPacked: () => { }
+    jPackConfig.set('onPacked', () => { });
 };
 
 export default jPackData;
-
