@@ -1,12 +1,12 @@
 {
   "name": "jizy-browser",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "browser": "dist/js/jizy-browser.min.js",
   "main": "lib/index.js",
   "type": "module",
+  "jizy": "dist/",
   "files": [
-    "dist/js/jizy-browser.min.js",
-    "dist/css/jizy-browser.min.css",
+    "dist/*",
     "lib/js/*.js",
     "lib/less/*.less",
     "lib/index.js",
