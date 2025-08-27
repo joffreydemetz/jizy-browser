@@ -2,7 +2,7 @@
 
 A simple browser compatibility library to check for feature support.
 
-## Browser Compatibility Layer (`lib/`)
+## Browser Compatibility Layer
 
 This package provides a browser compatibility layer for web projects, including JavaScript logic and stylesheets to detect and block unsupported browsers.
 
@@ -24,12 +24,13 @@ This package provides a browser compatibility layer for web projects, including 
 ### Usage Example
 
 ```js
-import { BrowserCompat } from './lib/index.js';
+import BrowserCompat from 'jizy-browser';
 
-BrowserCompat.noIE(); // Block Internet Explorer
-BrowserCompat.onBadBrowser(() => {
+const checker = new BrowserCompat();
+checker.onBadBrowser((browser) => {
   // Custom action when browser is not supported
 });
+checker.noIE(); // Block Internet Explorer
 ```
 
 ### Purpose

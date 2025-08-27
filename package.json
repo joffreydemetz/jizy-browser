@@ -1,16 +1,13 @@
 {
   "name": "jizy-browser",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "browser": "dist/js/jizy-browser.min.js",
   "main": "lib/index.js",
   "type": "module",
   "jizy": "dist/",
   "files": [
     "dist/*",
-    "lib/js/*.js",
-    "lib/less/*.less",
-    "lib/index.js",
-    "lib/browsercompat.less"
+    "lib/*"
   ],
   "scripts": {
     "jpack:export": "node ./cli/jpack.js --action build --name perso",
@@ -30,6 +27,6 @@
   "license": "MIT",
   "description": "A simple JS browser compatibility library.",
   "devDependencies": {
-    "jizy-packer": "^2.0.0"
+    "jizy-packer": "^2.1.0"
   }
 }
