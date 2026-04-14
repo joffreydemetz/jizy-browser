@@ -1,6 +1,6 @@
 {
   "name": "jizy-browser",
-  "version": "2.1.3",
+  "version": "2.1.5",
   "browser": "dist/js/jizy-browser.min.js",
   "main": "lib/index.js",
   "type": "module",
@@ -27,6 +27,7 @@
   "license": "MIT",
   "description": "A simple JS browser compatibility library.",
   "devDependencies": {
-    "jizy-packer": "^2.1.0"
+    "jizy-packer": "^2.1.44",
+    "less": "^4.5.1"
   }
 }
