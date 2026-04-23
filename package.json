@@ -1,6 +1,6 @@
 {
   "name": "jizy-browser",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "browser": "dist/js/jizy-browser.min.js",
   "main": "lib/index.js",
   "type": "module",
