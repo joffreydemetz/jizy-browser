@@ -13,7 +13,10 @@
     "jpack:export": "node ./cli/jpack.js --action build --name perso",
     "jpack:export-debug": "node ./cli/jpack.js --action build --name perso --debug",
     "jpack:dist": "node ./cli/jpack.js",
-    "jpack:dist-debug": "node ./cli/jpack.js --debug"
+    "jpack:dist-debug": "node ./cli/jpack.js --debug",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "repository": {
     "type": "git",
@@ -28,7 +31,9 @@
   "description": "A simple JS browser compatibility library.",
   "homepage": "https://jizy.joffreydemetz.com/browser",
   "devDependencies": {
+    "happy-dom": "^20.9.0",
     "jizy-packer": "^2.1.44",
-    "less": "^4.5.1"
+    "less": "^4.5.1",
+    "vitest": "^4.1.5"
   }
 }
