@@ -1,6 +1,6 @@
 {
   "name": "jizy-browser",
-  "version": "2.1.7",
+  "version": "2.1.8",
   "browser": "dist/js/jizy-browser.min.js",
   "main": "lib/index.js",
   "type": "module",
@@ -11,9 +11,7 @@
   ],
   "scripts": {
     "jpack:export": "node ./cli/jpack.js --action build --name perso",
-    "jpack:export-debug": "node ./cli/jpack.js --action build --name perso --debug",
     "jpack:dist": "node ./cli/jpack.js",
-    "jpack:dist-debug": "node ./cli/jpack.js --debug",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage"
