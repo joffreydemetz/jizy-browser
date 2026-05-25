@@ -1,44 +1,15 @@
-import fs from 'fs';
-import path from 'path';
-import { LogMe, jPackConfig } from 'jizy-packer';
-
-function generateLessVariablesFromConfig(variablesPath) {
-    LogMe.log('Build lib/less/_variables.less');
-    const desktopBreakpoint = jPackConfig.get('desktopBreakpoint') ?? '768px';
-    let content = `@desktop-breakpoint: ${desktopBreakpoint};` + "\n";
-    content += `@mobile-breakpoint: @desktop-breakpoint - 1px;`;
-    fs.writeFileSync(variablesPath, content, { encoding: 'utf8' });
-}
-
-function deleteLessVariablesFile(variablesPath) {
-    if (fs.existsSync(variablesPath)) {
-        LogMe.log('Delete lib/less/_variables.less');
-        fs.unlinkSync(variablesPath);
-    }
-}
+import { jPackConfig } from 'jizy-packer';
 
 const jPackData = function () {
-    const lessBuildVariablesPath = path.join(jPackConfig.get('basePath'), 'lib', 'less', '_variables.less');
-
     jPackConfig.sets({
         name: 'BrowserCompat',
-        alias: 'jizy-browser',
-        desktopBreakpoint: "900px"
+        alias: 'jizy-browser'
     });
 
     jPackConfig.set('onCheckConfig', () => { });
-
-    jPackConfig.set('onGenerateBuildJs', (code) => {
-        generateLessVariablesFromConfig(lessBuildVariablesPath);
-
-        return code;
-    });
-
+    jPackConfig.set('onGenerateBuildJs', (code) => code);
     jPackConfig.set('onGenerateWrappedJs', (wrapped) => wrapped);
-
-    jPackConfig.set('onPacked', () => {
-        deleteLessVariablesFile(lessBuildVariablesPath);
-    });
+    jPackConfig.set('onPacked', () => { });
 };
 
 export default jPackData;
