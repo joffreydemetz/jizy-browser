@@ -8,6 +8,10 @@
   "license": "MIT",
   "description": "A simple JS browser compatibility library.",
   "homepage": "https://jizy.joffreydemetz.com/browser",
+  "keywords": [
+    "browser",
+    "compatibility"
+  ],
   "files": [
     "dist/*",
     "lib/*"
@@ -23,10 +27,6 @@
     "type": "git",
     "url": "git+https://github.com/joffreydemetz/jizy-browser.git"
   },
-  "keywords": [
-    "browser",
-    "compatibility"
-  ],
   "devDependencies": {
     "happy-dom": "^20.9.0",
     "jizy-packer": "^2.1.44",
